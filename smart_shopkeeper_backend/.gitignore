@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets (your GEMINI_API_KEY lives here)
+.env
+.env.*
+!.env.example
+
+# Runtime data written by the app (orders, stock, categories, drivers,
+# master datasets, inventory log). Keeps only your two original CSVs.
+data/*
+!data/.gitkeep
+!data/retail_store_inventory.csv
+!data/talabat_enhanced_orders.csv
+
+# Trained models and generated charts
+outputs/*
+!outputs/.gitkeep
+
+# Logs
+*.log
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+services:
+  backend:
+    build: ./smart_shopkeeper_backend
+    container_name: shopkeeper-backend
+    restart: unless-stopped
+    environment:
+      # Optional: needed only for the AI review feature (set in a .env file next to this file)
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      DEBUG: "false"
+    volumes:
+      # your CSV files + saved JSON/CSV data (categories, stock, orders, drivers, master datasets)
+      - ./smart_shopkeeper_backend/data:/code/data
+      # trained models + generated charts
+      - ./smart_shopkeeper_backend/outputs:/code/outputs
+    ports:
+      - "8000:8000"   # optional: lets you open http://localhost:8000/docs
+
+  frontend:
+    build:
+      context: ./smart-shopkeeper-frontend
+      args:
+        VITE_API_URL: ""
+    container_name: shopkeeper-frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "3000:80"
