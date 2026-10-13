@@ -9,7 +9,6 @@ venv/
 .vscode/
 .idea/
 # runtime data is mounted as a volume, not baked into the image
-data/
-outputs/
+outputs/charts
 Dockerfile
 .dockerignore
