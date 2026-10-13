@@ -25,6 +25,7 @@ class Settings(BaseSettings):
     HOST: str = "0.0.0.0"
     PORT: int = 8000
 
+    CORS_ORIGINS: List[str] = ["*"]
     # ── File locations ─────────────────────────────────────────────
     DATA_DIR: Path = BASE_DIR / "data"
     CHARTS_DIR: Path = BASE_DIR / "outputs" / "charts"

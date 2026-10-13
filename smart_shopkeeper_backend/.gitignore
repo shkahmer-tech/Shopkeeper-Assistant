@@ -35,3 +35,15 @@ outputs/*
 .idea/
 .DS_Store
 Thumbs.db
+
+data/*
+!data/.gitkeep
+!data/retail_store_inventory.csv
+!data/talabat_enhanced_orders.csv
+!data/demand_master.csv
+!data/delivery_master.csv
+
+outputs/*
+!outputs/.gitkeep
+!outputs/*.joblib
+!outputs/*.json
