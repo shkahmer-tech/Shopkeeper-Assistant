@@ -77,7 +77,7 @@ class ModelStore:
                 "r2": self._demand.r2,
                 "rows_used": self._demand.rows_used,
             },
-            self._demand_path(),
+            self._demand_path(),compress=("xz", 6)
         )
 
     def _persist_delivery(self) -> None:
@@ -91,7 +91,7 @@ class ModelStore:
                 "r2": self._delivery.r2,
                 "rows_used": self._delivery.rows_used,
             },
-            self._delivery_path(),
+            self._delivery_path(),compress=("xz", 6)
         )
 
     def load_all(self) -> None:

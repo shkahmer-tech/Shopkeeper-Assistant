@@ -70,7 +70,14 @@ def _train_on_path(training_path: Path) -> TrainedModel:
     y = df[settings.DEMAND_TARGET_COL]
 
     X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, random_state=42)
-    model = RandomForestRegressor(n_estimators=150, random_state=42, n_jobs=-1)
+    model = RandomForestRegressor(
+    n_estimators=40,
+    max_depth=10,
+    min_samples_leaf=30,
+    max_features=0.7,
+    n_jobs=1,
+    random_state=42,
+)
     model.fit(X_tr, y_tr)
 
     y_pred = model.predict(X_te)

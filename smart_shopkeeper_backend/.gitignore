@@ -45,5 +45,5 @@ data/*
 
 outputs/*
 !outputs/.gitkeep
-!outputs/*.joblib
-!outputs/*.json
+!outputs/models/
+!outputs/models/*.joblib
