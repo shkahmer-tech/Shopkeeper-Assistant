@@ -12,7 +12,8 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY app ./app
-
+COPY data ./data
+COPY outputs/models ./outputs/models
 # Run as a normal user; data/ and outputs/ are writable and meant to be mounted as volumes
 RUN useradd --create-home --uid 1000 appuser \
     && mkdir -p /code/data /code/outputs/charts /code/outputs/models \

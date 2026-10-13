@@ -10,5 +10,6 @@ venv/
 .idea/
 # runtime data is mounted as a volume, not baked into the image
 outputs/charts
+data/*.json
 Dockerfile
 .dockerignore
